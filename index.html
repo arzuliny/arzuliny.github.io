@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ARZULINY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      font-family: 'Space Mono', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+
+    /* Top Navigation Tabs */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 60px;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: #888888;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover, nav a.active {
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 4px;
+    }
+
+    /* Main Bio Section */
+    .bio-section {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 60px;
+    }
+
+    @media (max-width: 650px) {
+      .bio-section {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    .avatar {
+      width: 180px;
+      height: 180px;
+      background-color: #222222;
+      border: 3px solid #ffffff;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .bio-content {
+      flex: 1;
+    }
+
+    .subtitle {
+      color: #888888;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 28px;
+      line-height: 1.4;
+      margin-bottom: 20px;
+      word-break: break-word;
+    }
+
+    .description {
+      color: #cccccc;
+      font-size: 13px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .credit {
+      color: #666666;
+      font-size: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    /* Friends Section */
+    .section-title {
+      color: #888888;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .friends-header {
+      font-family: 'Press Start 2P', monospace;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .friends-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      font-size: 13px;
+    }
+
+    .friends-list a {
+      color: #ffffff
