@@ -174,17 +174,45 @@
       list-style: none;
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 15px;
+      align-items: flex-start;
     }
 
     .friend-card {
       background: #141414;
       color: #ffffff;
-      padding: 10px 18px;
+      padding: 12px 18px;
       border: 1px solid #333333;
       border-radius: 6px;
-      font-size: 13px;
+      font-size: 14px;
       letter-spacing: 1px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .friend-name {
+      font-weight: bold;
+    }
+
+    .sub-yt-btn {
+      display: inline-block;
+      font-size: 10px;
+      padding: 4px 8px;
+      background-color: #222222;
+      color: #ff4d4d;
+      text-decoration: none;
+      border: 1px solid #444444;
+      border-radius: 4px;
+      transition: all 0.2s ease;
+      font-weight: bold;
+    }
+
+    .sub-yt-btn:hover {
+      background-color: #ff4d4d;
+      color: #ffffff;
+      border-color: #ff4d4d;
     }
   </style>
 </head>
@@ -212,7 +240,7 @@
         <!-- Profile Links -->
         <div class="social-links">
           <a href="https://www.youtube.com/@arzuliny" target="_blank" class="social-btn">📺 YouTube Channel</a>
-          <a href="https://www.roblox.com/users/4810257539/profile" target="_blank" class="social-btn">🎮 Roblox Profile</a>
+          <a href="https://www.roblox.com/users/4810257539/profile" target="_btn" class="social-btn">🎮 Roblox Profile</a>
         </div>
       </div>
     </div>
@@ -222,11 +250,23 @@
       <div class="section-title">MY PEOPLE</div>
       <h2 class="friends-header">FRIENDS.</h2>
       <ul class="friends-list">
-        <li class="friend-card">Jane</li>
-        <li class="friend-card">Bia</li>
-        <li class="friend-card">JayTheMan</li>
-        <li class="friend-card">Sharkip</li>
-        <li class="friend-card">Vivian</li>
+        <li class="friend-card">
+          <span class="friend-name">Jane</span>
+        </li>
+        <li class="friend-card">
+          <span class="friend-name">Bia</span>
+        </li>
+        <li class="friend-card">
+          <span class="friend-name">JayTheMan</span>
+          <a href="https://www.youtube.com/@jaywashere14" target="_blank" class="sub-yt-btn">▶ YouTube</a>
+        </li>
+        <li class="friend-card">
+          <span class="friend-name">Sharkip</span>
+          <a href="https://www.youtube.com/@sssharkip" target="_blank" class="sub-yt-btn">▶ YouTube</a>
+        </li>
+        <li class="friend-card">
+          <span class="friend-name">Vivian</span>
+        </li>
       </ul>
     </div>
   </div>
