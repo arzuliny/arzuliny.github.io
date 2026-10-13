@@ -105,14 +105,6 @@
       margin-bottom: 50px;
     }
 
-    @media (max-width: 600px) {
-      .bio-section {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-    }
-
     .avatar {
       width: 180px;
       height: 180px;
@@ -244,6 +236,33 @@
       background-color: #ff4d4d;
       color: #ffffff;
       border-color: #ff4d4d;
+    }
+
+    /* Mobile Responsive Optimizations */
+    @media (max-width: 600px) {
+      .bio-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .friends-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+        gap: 12px;
+        width: 100%;
+      }
+
+      .friend-card {
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        width: 100%;
+      }
     }
   </style>
 </head>
