@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arzuliny's page!</title>
   
-  <!-- Tab Icon (Favicon) Uses icon.png -->
+  <!-- Tab Icon (Favicon) -->
   <link rel="icon" type="image/png" href="icon.png">
 
-  <!-- Google Font: Cabin Sketch -->
+  <!-- Aesthetic Google Font: Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -20,229 +20,246 @@
       padding: 0;
     }
 
-    /* Soft Page Fade-In Animation */
-    @keyframes fadeInPage {
+    @keyframes carrdFadeIn {
       0% {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(20px) scale(0.97);
       }
       100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
     body {
-      background: #09090b;
+      background-color: #08080a;
       background-image: 
-        radial-gradient(at 20% 20%, rgba(255, 77, 141, 0.08) 0px, transparent 50%),
-        radial-gradient(at 80% 80%, rgba(138, 43, 226, 0.08) 0px, transparent 50%);
-      color: #f4f4f5;
-      font-family: 'Cabin Sketch', cursive, sans-serif;
+        radial-gradient(at 10% 10%, rgba(255, 105, 180, 0.12) 0px, transparent 50%),
+        radial-gradient(at 90% 90%, rgba(138, 43, 226, 0.12) 0px, transparent 50%);
+      color: #f4f4f7;
+      font-family: 'Outfit', sans-serif;
       min-height: 100vh;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: 40px 20px;
-      animation: fadeInPage 1.2s ease-out forwards;
     }
 
-    .container {
-      max-width: 720px;
+    /* Floating Carrd Card */
+    .carrd-card {
+      max-width: 460px;
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    /* Aesthetic Top Navigation Bar */
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      background: rgba(24, 24, 27, 0.7);
-      backdrop-filter: blur(12px);
+      background: rgba(18, 18, 22, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 100px;
-      padding: 12px 24px;
-      font-size: 16px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    }
-
-    nav a {
-      color: #a1a1aa;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      font-weight: 700;
-    }
-
-    nav a:hover {
-      color: #ffffff;
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-    }
-
-    /* Main Profile Section Card */
-    .profile-card {
-      background: rgba(24, 24, 27, 0.75);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 40px 30px;
+      border-radius: 28px;
+      padding: 36px 26px;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+      animation: carrdFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    .avatar-wrapper {
+    /* Avatar Header */
+    .avatar-container {
       position: relative;
-      margin-bottom: 24px;
+      margin-bottom: 18px;
     }
 
     .avatar {
-      width: 160px;
-      height: 160px;
+      width: 120px;
+      height: 120px;
       object-fit: cover;
-      border-radius: 24px;
-      border: 2px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      border-radius: 50%;
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     }
 
-    .greeting {
-      color: #a1a1aa;
-      font-size: 15px;
+    /* Titles & Intro */
+    .name {
+      font-size: 34px;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      letter-spacing: -0.5px;
+    }
+
+    .greeting-sub {
+      font-size: 13px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 6px;
-      font-weight: 700;
+      color: #ff85b3;
+      font-weight: 600;
+      margin-bottom: 22px;
     }
 
-    .name {
-      font-family: 'Cabin Sketch', cursive, sans-serif;
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 1.1;
-      margin-bottom: 16px;
-      color: #ffffff;
-      text-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-    }
-
-    .description {
-      color: #d4d4d8;
-      font-size: 20px;
-      line-height: 1.6;
-      margin-bottom: 28px;
-      font-weight: 700;
-      max-width: 580px;
-    }
-
-    /* Social Buttons */
-    .social-links {
+    /* Navigation Tabs */
+    .carrd-tabs {
       display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      justify-content: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 4px;
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      margin-bottom: 24px;
       width: 100%;
     }
 
-    .social-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 22px;
-      background: rgba(39, 39, 42, 0.8);
+    .tab-btn {
+      flex: 1;
+      padding: 8px 14px;
+      border: none;
+      background: transparent;
+      color: #9a9ab0;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 100px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .tab-btn.active {
+      background: rgba(255, 255, 255, 0.12);
       color: #ffffff;
-      text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 14px;
-      font-size: 17px;
-      font-weight: 700;
-      transition: all 0.25 ease;
+      font-weight: 600;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
-    .social-btn:hover {
-      background: #ffffff;
-      color: #09090b;
-      border-color: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.25);
+    .tab-btn:hover:not(.active) {
+      color: #e0e0e0;
     }
 
-    /* Boyfriend Banner */
-    .boyfriend-banner {
-      background: linear-gradient(135deg, rgba(255, 77, 141, 0.12) 0%, rgba(24, 24, 27, 0.8) 100%);
-      border: 1px solid rgba(255, 77, 141, 0.4);
-      border-radius: 20px;
-      padding: 16px 24px;
-      display: flex;
+    /* Tab Sections */
+    .tab-pane {
+      display: none;
+      width: 100%;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      gap: 12px;
-      font-size: 19px;
-      font-weight: 700;
-      color: #ffb3d1;
-      box-shadow: 0 8px 25px rgba(255, 77, 141, 0.12);
-      text-align: center;
     }
 
-    .boyfriend-banner .heart {
-      color: #ff4d8d;
-      font-size: 22px;
-      flex-shrink: 0;
+    .tab-pane.active {
+      display: flex;
     }
 
-    /* Friends Section Card */
-    .friends-card {
-      background: rgba(24, 24, 27, 0.75);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    /* Description Paragraph */
+    .description {
+      color: #c8c8d5;
+      font-size: 15px;
+      line-height: 1.6;
+      font-weight: 400;
+      margin-bottom: 22px;
     }
 
-    .friends-header {
-      font-family: 'Cabin Sketch', cursive, sans-serif;
-      font-size: 30px;
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-align: center;
-      color: #ffffff;
+    /* Social Action Buttons */
+    .link-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      margin-bottom: 22px;
     }
 
-    .friends-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 14px;
-    }
-
-    .friend-card {
-      background: rgba(39, 39, 42, 0.6);
-      color: #ffffff;
-      padding: 12px 16px;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 14px;
-      font-size: 18px;
-      font-weight: 700;
+    .carrd-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      width: 100%;
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .carrd-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Boyfriend Banner */
+    .boyfriend-banner {
+      width: 100%;
+      background: linear-gradient(135deg, rgba(255, 105, 180, 0.12) 0%, rgba(20, 20, 25, 0.6) 100%);
+      border: 1px solid rgba(255, 105, 180, 0.3);
+      border-radius: 14px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffb8d2;
+      box-shadow: 0 4px 16px rgba(255, 105, 180, 0.08);
+    }
+
+    .boyfriend-banner .heart {
+      color: #ff69b4;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    /* Projects Box */
+    .projects-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 22px;
+      width: 100%;
+    }
+
+    .projects-heading {
+      font-size: 20px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+
+    .projects-sub {
+      color: #a0a0b5;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    /* Buddies Grid */
+    .buddies-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      width: 100%;
+    }
+
+    .buddy-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      padding: 10px 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       transition: all 0.2s ease;
     }
 
-    .friend-card:hover {
-      border-color: rgba(255, 179, 209, 0.4);
-      background: rgba(39, 39, 42, 0.9);
+    .buddy-card:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 133, 179, 0.4);
       transform: translateY(-2px);
     }
 
-    .friend-icon {
+    .buddy-icon {
       width: 26px;
       height: 26px;
       border-radius: 50%;
@@ -250,98 +267,123 @@
       flex-shrink: 0;
     }
 
-    .friend-name {
+    .buddy-name {
       color: #ffffff;
+      font-size: 14px;
       text-decoration: none;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    a.friend-name:hover {
-      color: #ffb3d1;
-      text-decoration: underline;
+    a.buddy-name:hover {
+      color: #ff85b3;
     }
 
-    /* Responsive Mobile Styling */
-    @media (max-width: 600px) {
+    @media (max-width: 480px) {
       body {
-        padding: 24px 12px;
+        padding: 20px 12px;
       }
 
-      .profile-card {
-        padding: 30px 20px;
+      .carrd-card {
+        padding: 28px 18px;
       }
 
       .name {
-        font-size: 40px;
+        font-size: 28px;
       }
 
-      .description {
-        font-size: 18px;
-      }
-
-      .friends-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      .buddies-list {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <!-- Top Navigation Header -->
-    <nav>
-      <a href="https://www.youtube.com/@arzuliny" target="_blank">YouTube</a>
-      <a href="https://www.roblox.com/users/4810257539/profile" target="_blank">Roblox</a>
-    </nav>
-
-    <!-- Main Profile Card -->
-    <main class="profile-card">
-      <div class="avatar-wrapper">
-        <img src="pfp.jpg" alt="Arzuliny PFP" class="avatar">
-      </div>
-
-      <div class="greeting">Hello! I am...</div>
-      <h1 class="name">Arzuliny!</h1>
-      <p class="description">
-        Welcome to my page! I make videos and I'm a beginner editor and animator. I like cats, and I also make music sometimes. Also, you can call me "Autumn" if you want!
-      </p>
-
-      <!-- Profile Links -->
-      <div class="social-links">
-        <a href="https://www.youtube.com/@arzuliny" target="_blank" class="social-btn">📺 YouTube Channel</a>
-        <a href="https://www.roblox.com/users/4810257539/profile" target="_blank" class="social-btn">🎮 Roblox Profile</a>
-      </div>
-    </main>
-
-    <!-- Special Boyfriend Highlight Banner -->
-    <div class="boyfriend-banner">
-      <span class="heart">💖</span>
-      <span>Taken by my wonderful boyfriend, he means everything to me <3 </span>
+  <div class="carrd-card">
+    <!-- Header Avatar -->
+    <div class="avatar-container">
+      <img src="pfp.jpg" alt="Arzuliny PFP" class="avatar">
     </div>
 
-    <!-- Friends Section -->
-    <section class="friends-card">
-      <h2 class="friends-header">Buddies!</h2>
-      <ul class="friends-list">
-        <li class="friend-card">
-          <span class="friend-name">Jane</span>
+    <!-- Name & Greeting -->
+    <h1 class="name">Arzuliny</h1>
+    <div class="greeting-sub">Hello and welcome to my page!</div>
+
+    <!-- Carrd Nav Tabs -->
+    <div class="carrd-tabs">
+      <button class="tab-btn active" onclick="showTab(event, 'about')">About</button>
+      <button class="tab-btn" onclick="showTab(event, 'projects')">Projects</button>
+      <button class="tab-btn" onclick="showTab(event, 'buddies')">Buddies</button>
+    </div>
+
+    <!-- About Tab Pane -->
+    <div id="about" class="tab-pane active">
+      <p class="description">
+        Hello there! I make videos and I'm a beginner editor. I like cats, and I also make music sometimes. Also, you can call me "Autumn" or "Auggy" if you want!
+      </p>
+
+      <div class="link-buttons">
+        <a href="https://www.youtube.com/@arzuliny" target="_blank" class="carrd-btn">📺 YouTube Channel</a>
+        <a href="https://www.roblox.com/users/4810257539/profile" target="_blank" class="carrd-btn">🎮 Roblox Profile</a>
+      </div>
+
+      <div class="boyfriend-banner">
+        <span class="heart">💖</span>
+        <span>Taken by my wonderful boyfriend, he means everything to me <3 </span>
+      </div>
+    </div>
+
+    <!-- Projects Tab Pane -->
+    <div id="projects" class="tab-pane">
+      <div class="projects-box">
+        <h2 class="projects-heading">Projects</h2>
+        <p class="projects-sub">Projects I'm in.</p>
+      </div>
+    </div>
+
+    <!-- Buddies Tab Pane -->
+    <div id="buddies" class="tab-pane">
+      <ul class="buddies-list">
+        <li class="buddy-card">
+          <span class="buddy-name">Jane</span>
         </li>
-        <li class="friend-card">
-          <img src="Bia's Icon.png" alt="Bia Icon" class="friend-icon">
-          <span class="friend-name">Bia</span>
+        <li class="buddy-card">
+          <img src="Bia's Icon.png" alt="Bia Icon" class="buddy-icon">
+          <span class="buddy-name">Bia</span>
         </li>
-        <li class="friend-card">
-          <img src="Sharkip's Icon.png" alt="Sharkip Icon" class="friend-icon">
-          <a href="https://www.youtube.com/@sssharkip" target="_blank" class="friend-name">Sharkip</a>
+        <li class="buddy-card">
+          <img src="JayTheMan.png" alt="JayTheMan Icon" class="buddy-icon">
+          <a href="https://www.youtube.com/@jaywashere14" target="_blank" class="buddy-name">JayTheMan</a>
         </li>
-        <li class="friend-card">
-          <span class="friend-name">Vivian</span>
+        <li class="buddy-card">
+          <img src="Sharkip's Icon.png" alt="Sharkip Icon" class="buddy-icon">
+          <a href="https://www.youtube.com/@sssharkip" target="_blank" class="buddy-name">Sharkip</a>
         </li>
-        <li class="friend-card">
-          <span class="friend-name">Slurpy/Skraps</span>
+        <li class="buddy-card">
+          <span class="buddy-name">Vivian</span>
+        </li>
+        <li class="buddy-card">
+          <span class="buddy-name">Slurpy/Skraps</span>
         </li>
       </ul>
-    </section>
+    </div>
   </div>
+
+  <script>
+    function showTab(evt, tabId) {
+      const panes = document.querySelectorAll('.tab-pane');
+      panes.forEach(p => p.classList.remove('active'));
+
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(t => t.classList.remove('active'));
+
+      document.getElementById(tabId).classList.add('active');
+      evt.currentTarget.classList.add('active');
+    }
+  </script>
 
 </body>
 </html>
