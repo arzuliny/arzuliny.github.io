@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>arzuliny's page!</title>
+  <title>Arzuliny's page!</title>
   
   <!-- Tab Icon (Favicon) -->
   <link rel="icon" type="image/png" href="icon.png">
@@ -43,6 +43,14 @@
       justify-content: center;
       align-items: center;
       padding: 40px 20px;
+      transition: background 0.6s ease;
+      position: relative;
+    }
+
+    /* Pitch Black Mode when Mystery Tab is active */
+    body.pitch-black {
+      background: #000000 !important;
+      background-image: none !important;
     }
 
     /* Floating Carrd Card */
@@ -61,6 +69,25 @@
       text-align: center;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
       animation: carrdFadeIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      transition: all 0.5s ease;
+    }
+
+    /* Hide Card Shell in Pitch Black Mode */
+    body.pitch-black .carrd-card {
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    /* Hide Header Elements in Pitch Black Mode */
+    body.pitch-black .avatar-container,
+    body.pitch-black .name,
+    body.pitch-black .greeting-sub,
+    body.pitch-black .carrd-tabs {
+      display: none;
     }
 
     /* Avatar Header */
@@ -111,7 +138,7 @@
 
     .tab-btn {
       flex: 1;
-      padding: 8px 14px;
+      padding: 8px 10px;
       border: none;
       background: transparent;
       color: #9a9ab0;
@@ -281,6 +308,101 @@
       color: #ff85b3;
     }
 
+    /* Tombstone / Grave Section */
+    .grave-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 40px 0;
+    }
+
+    .tombstone {
+      width: 200px;
+      background: linear-gradient(180deg, #2a2a30 0%, #15151a 100%);
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-bottom: none;
+      border-top-left-radius: 100px;
+      border-top-right-radius: 100px;
+      padding: 40px 20px 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.9);
+      position: relative;
+    }
+
+    .tomb-cross {
+      font-size: 24px;
+      color: #5a5a6a;
+      margin-bottom: 14px;
+    }
+
+    .tomb-rip {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      color: #8a8a9e;
+      margin-bottom: 12px;
+    }
+
+    .tomb-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #e4e4ed;
+      margin-bottom: 10px;
+    }
+
+    .tomb-dates {
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      color: #8a8a9e;
+      line-height: 1.5;
+      font-weight: 500;
+    }
+
+    .tomb-base {
+      width: 240px;
+      height: 18px;
+      background: #101014;
+      border: 2px solid rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Back Arrow Button (Shown only in Mystery Mode) */
+    .back-btn {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #d4d4dc;
+      padding: 10px 18px;
+      border-radius: 100px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      z-index: 100;
+    }
+
+    .back-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      transform: translateX(-3px);
+    }
+
+    body.pitch-black .back-btn {
+      display: flex;
+    }
+
     @media (max-width: 480px) {
       body {
         padding: 20px 12px;
@@ -297,10 +419,20 @@
       .buddies-list {
         grid-template-columns: 1fr;
       }
+
+      .back-btn {
+        top: 16px;
+        left: 16px;
+        padding: 8px 14px;
+        font-size: 13px;
+      }
     }
   </style>
 </head>
 <body>
+
+  <!-- Corner Back Button for Pitch Black Mode -->
+  <button class="back-btn" onclick="goBackMain()">← Back</button>
 
   <div class="carrd-card">
     <!-- Header Avatar -->
@@ -310,19 +442,20 @@
 
     <!-- Name & Greeting -->
     <h1 class="name">Arzuliny</h1>
-    <div class="greeting-sub">Hello and welcome to my page!</div>
+    <div class="greeting-sub">Hello & welcome!</div>
 
     <!-- Carrd Nav Tabs -->
     <div class="carrd-tabs">
       <button class="tab-btn active" onclick="showTab(event, 'about')">About</button>
       <button class="tab-btn" onclick="showTab(event, 'projects')">Projects</button>
       <button class="tab-btn" onclick="showTab(event, 'buddies')">Buddies</button>
+      <button class="tab-btn" onclick="showTab(event, 'mystery')">???</button>
     </div>
 
     <!-- About Tab Pane -->
     <div id="about" class="tab-pane active">
       <p class="description">
-        Hello there! I make videos and I'm a beginner editor. I like cats, and I also make music sometimes. Also, you can call me "Autumn" or "Auggy" if you want!
+        Welcome to my page! I make videos and I'm a beginner editor. I like cats, and I also make music sometimes. Also, you can call me "Autumn" if you want!
       </p>
 
       <div class="link-buttons">
@@ -370,6 +503,18 @@
         </li>
       </ul>
     </div>
+
+    <!-- Mystery Grave Tab Pane -->
+    <div id="mystery" class="tab-pane">
+      <div class="grave-box">
+        <div class="tombstone">
+          <div class="tomb-cross">✝</div>
+          <div class="tomb-name">Arzuliny</div>
+          <div class="tomb-dates">August 1, 2011<br>–<br>November 10, 2026</div>
+        </div>
+        <div class="tomb-base"></div>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -382,6 +527,25 @@
 
       document.getElementById(tabId).classList.add('active');
       evt.currentTarget.classList.add('active');
+
+      if (tabId === 'mystery') {
+        document.body.classList.add('pitch-black');
+      } else {
+        document.body.classList.remove('pitch-black');
+      }
+    }
+
+    function goBackMain() {
+      document.body.classList.remove('pitch-black');
+      
+      const panes = document.querySelectorAll('.tab-pane');
+      panes.forEach(p => p.classList.remove('active'));
+
+      const tabs = document.querySelectorAll('.tab-btn');
+      tabs.forEach(t => t.classList.remove('active'));
+
+      document.getElementById('about').classList.add('active');
+      document.querySelectorAll('.tab-btn')[0].classList.add('active');
     }
   </script>
 
